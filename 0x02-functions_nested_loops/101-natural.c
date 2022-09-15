@@ -7,8 +7,7 @@
 
 int main(void)
 
-{
-	
+{	
 	int x = 1024, y, sum = 0;
 
 	for (y = 0; y < x; y++)
@@ -28,6 +27,5 @@ int main(void)
 	printf("%d\n", sum);
 
 	return (0);
-
 }
 

@@ -1,52 +1,38 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of a program.
- * @ac: argument count.
- * @av: argument vector.
+ * print_tab - Prints an array of string
+ * @tab: The array to print
  *
- * Return: pointer of an array of char
+ * Return: nothing
  */
-char *argstostr(int ac, char **av)
+void print_tab(char **tab)
 {
-	char *aout;
-	int c, i, j, ia;
+	int i;
 
-	if (ac == 0)
-		return (NULL);
-
-	for (c = i = 0; i < ac; i++)
+	for (i = 0; tab[i] != NULL; ++i)
 	{
-		if (av[i] == NULL)
-			return (NULL);
-
-		for (j = 0; av[i][j] != '\0'; j++)
-			c++;
-		c++;
+		printf("%s\n", tab[i]);
 	}
+}
 
-	aout = malloc((c + 1) * sizeof(char));
+/**
+ * main - check the code for ALX School students.
+ *
+ * Return: 1 if an error occurred, 0 otherwise
+ */
+int main(void)
+{
+	char **tab;
 
-	if (aout == NULL)
+	tab = strtow("      ALX School         #cisfun      ");
+	if (tab == NULL)
 	{
-		free(aout);
-		return (NULL);
+		printf("Failed\n");
+		return (1);
 	}
-
-	for (i = j = ia = 0; ia < c; j++, ia++)
-	{
-		if (av[i][j] == '\0')
-		{
-			aout[ia] = '\n';
-			i++;
-			ia++;
-			j = 0;
-		}
-		if (ia < c - 1)
-			aout[ia] = av[i][j];
-	}
-	aout[ia] = '\0';
-
-	return (aout);
+	print_tab(tab);
+	return (0);
 }

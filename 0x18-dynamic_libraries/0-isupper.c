@@ -1,17 +1,18 @@
 #include "main.h"
 
 /**
- * _isupper - checks is a character is uppercase
- * @c: carrier integer variable
- * Return: 1 if true, 0 if false
+ *_isupper - check the code for Holberton School students.
+ * @c: this is the check
+ * Return: 1 if the number is positive. 0 otherwise
  */
-
 int _isupper(int c)
 {
-	if (c >= 65 && c <= 90)
-	{
-		return (1);
-	}
-	return (0);
+    if (c >= 65 && c <= 90)
+    {
+        return (1);
+    }
+    else
+    {
+        return (0);
 }
-
+}

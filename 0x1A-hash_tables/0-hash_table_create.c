@@ -1,7 +1,4 @@
 #include "hash_tables.h"
-
-/* Nice22 */
-
 /**
  * hash_table_create - Creates a hash table.
  * @size: The size of the array.
